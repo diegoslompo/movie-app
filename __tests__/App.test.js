@@ -4,7 +4,7 @@ import { shallow } from "enzyme"
 import App from '../src/App'
 
 // descreve o teste no componente
-describe('Testing component App', () => {
+describe('Testing component App', () => { 
     // passa a ação desejada de retorno
     it('should render corretly', () => {
 
