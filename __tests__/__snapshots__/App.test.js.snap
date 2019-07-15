@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing component App should render corretly 1`] = `
+<div
+  className="App"
+>
+  <h2>
+    Olá Mundo
+  </h2>
+</div>
+`;
