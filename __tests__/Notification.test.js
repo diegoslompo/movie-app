@@ -1,12 +1,12 @@
 import React from "react"
 import ShallowRenderer from 'react-test-renderer/shallow';
-import App from '../src/App'
+import Notification from '../src/components/Notification'
 
-describe('Testing component App', () => { 
+describe('Testing component Notification', () => { 
     it('should render corretly', () => {
         const renderer = new ShallowRenderer()
         const wrapper = renderer.render(
-            <App  />
+            <Notification data={{}} />
         )
         expect(wrapper).toMatchSnapshot()
     })

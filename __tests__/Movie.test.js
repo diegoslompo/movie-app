@@ -1,12 +1,12 @@
 import React from "react"
 import ShallowRenderer from 'react-test-renderer/shallow';
-import App from '../src/App'
+import Movie from '../src/components/Movie'
 
-describe('Testing component App', () => { 
+describe('Testing component Movie', () => { 
     it('should render corretly', () => {
         const renderer = new ShallowRenderer()
         const wrapper = renderer.render(
-            <App  />
+            <Movie movieItem={[]} />
         )
         expect(wrapper).toMatchSnapshot()
     })

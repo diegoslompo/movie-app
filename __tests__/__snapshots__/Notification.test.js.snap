@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing component Notification should render corretly 1`] = `
+<ForwardRef(styled.div)>
+  <ForwardRef(styled.h2) />
+  <ForwardRef(styled.p) />
+</ForwardRef(styled.div)>
+`;

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import * as MoviesAPI from './utils/MoviesAPI'
-import { Route } from 'react-router-dom'
+import styled from 'styled-components'
+import './App.css';
 // mainly components
 import Movie from './components/Movie'
+import Notification from './components/Notification'
 
 
 class App extends Component {
@@ -12,7 +14,15 @@ class App extends Component {
     movies: [],
     query:'',
     searchMovies: '',
-    searchEmpty: false
+    searchEmpty: false,
+    infoFeat: {
+      title: 'Search by',
+      description: 'Batman - Avengers - Rick and Morty - [etc...]'
+    },
+    infoEmpty: {
+      title: ':(',
+      description: 'SORRY - NO DATABASE API RETURN MOVIES'
+    }
   }
 
   // [getAll] movies the server API use the async + await
@@ -43,34 +53,60 @@ class App extends Component {
   
   render () {
 
-    const { movies, query, searchEmpty, searchMovies } = this.state 
+    const { movies, query, searchEmpty, searchMovies, infoFeat, infoEmpty } = this.state 
     const currentMovies = searchMovies !== '' ? searchMovies : movies
 
     return (
-      <div className="ds-app">
-        <Route path='/search' render={() => (
-          <div>teste</div>
-        )}/>
-
-        <input 
-          type="text"
-          placeholder="Search"
-          value={query}
-          onChange={(event) => this.updateQuery(event.target.value)}
-        />
-        { !searchEmpty ? (
-          <Route exact path='/' render={() => (
-            <Movie
-              movieItem={currentMovies} 
+      <Main className="ds-app">
+        <Container>
+          <Input 
+            type="text"
+            placeholder="Search"
+            value={query}
+            onChange={(event) => this.updateQuery(event.target.value)}
+          />
+          { !searchEmpty ? (
+            <div>
+              <Notification
+                title={infoFeat.title}
+                description={infoFeat.description}
+              />
+              <Movie
+                movieItem={currentMovies} 
+              />
+            </div>
+          ):(
+            <Notification
+              title={infoEmpty.title}
+              description={infoEmpty.description}
             />
-          )}/>
-        ): (
-          <div>Não há retorno da API</div>
-          // <NotificationSearch/>
-        )}
-      </div>
+          )}
+        </Container>
+      </Main>
     )
   }
 } 
+
+const Main = styled.div`
+  height: 100%;
+  font-family: monospace;
+`;
+
+const Container = styled.div`
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 600px;
+`;
+
+const Input = styled.input`
+  border: 0;
+  width: -webkit-fill-available;
+  height: 40px;
+  padding: 5px 15px;
+  margin-top: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 18px;
+`;
 
 export default App;

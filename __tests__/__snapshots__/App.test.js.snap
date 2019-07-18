@@ -1,11 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Testing component App should render corretly 1`] = `
-<div
-  className="App"
+<ForwardRef(styled.div)
+  className="ds-app"
 >
-  <h2>
-    Olá Mundo
-  </h2>
-</div>
+  <ForwardRef(styled.div)>
+    <ForwardRef(styled.input)
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+      value=""
+    />
+    <div>
+      <Notification
+        description="Batman - Avengers - Rick and Morty - [etc...]"
+        title="Search by"
+      />
+      <Movie
+        movieItem={Array []}
+      />
+    </div>
+  </ForwardRef(styled.div)>
+</ForwardRef(styled.div)>
 `;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing component Movie Details should render corretly 1`] = `
+<div
+  className="ds-movie__details"
+>
+  <img />
+  <h2 />
+  <p>
+    Year: 
+  </p>
+  <p>
+    Type: 
+  </p>
+  <p>
+    Id: 
+  </p>
+</div>
+`;
